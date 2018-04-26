@@ -1,0 +1,17 @@
+---
+- name: First Playbook
+  hosts: all
+  become: true
+  tasks: 
+     - name: check node live status
+       ping: 
+
+     - name: Install Httpd
+       yum:
+         name: httpd
+         state: installed
+     
+     - name: check httpd service status  
+       service:
+           name: httpd
+           state: started

@@ -1,0 +1,14 @@
+---
+- name: First Playbook
+  hosts: all
+  tasks: 
+     - name: check node live status
+       ping: 
+
+     - name: Get service status
+       service:
+          name: postfix
+ 
+          state : restarted
+
+       become: yes
